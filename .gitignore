@@ -1,43 +1,5 @@
-# Git Ignore for lx-music-api-server
 
-# python
-*.pyc
-*.pyo
-*.pyd
-*.pyz
-*/__pycache__/*
-__pycache__/
-*.egg-info
-*.egg
-
-# pyinstaller
-*.spec
-dist
-build
-
-# project
-cache.db
-data.db
-test.*
-*/test.*
-logs
-config.json
-/config/config.json
-/config/data.db
-*.log
-*.bak
-*.tmp
-
-# VSCode
-.history
-
-# Vim
-*.swp
-*.swp~
-
-# GVim
-*.un~
-*.un
-
-# temp script
-lx-music-source-example.js
+node_modules/
+src/.vuepress/.cache/
+src/.vuepress/.temp/
+src/.vuepress/dist/
