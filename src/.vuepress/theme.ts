@@ -3,7 +3,7 @@ import { hopeTheme } from "vuepress-theme-hope";
 import sidebar from "./sidebar.js";
 
 export default hopeTheme({
-  hostname: "https://helloplhm-qwq.github.io/lx-music-api-server",
+  hostname: "https://apidoc.zcmonety.xyz/",
 
   iconAssets: "fontawesome-with-brands",
 
