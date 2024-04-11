@@ -4,7 +4,7 @@ head:
     - name: keywords
       content: Linux or MacOS部署教程
 title: Linux or MacOS部署教程
-icon: docs
+icon: fab fa-dochub
 author: ikun0014
 date: 2024-04-10
 index: false
