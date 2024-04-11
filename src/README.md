@@ -24,6 +24,5 @@ features:
   - title: 快速响应
     details: 采用aiohttp进行异步请求，毫秒级响应
     icon: magic
-footer: 'Copyright © 2024 All Devloper'
 footerHtml: true
 ---

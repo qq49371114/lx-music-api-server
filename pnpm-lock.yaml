@@ -4,6 +4,11 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+dependencies:
+  lxgw-wenkai-webfont:
+    specifier: ^1.7.0
+    version: 1.7.0
+
 devDependencies:
   '@vuepress/bundler-vite':
     specifier: 2.0.0-rc.9
@@ -1969,6 +1974,10 @@ packages:
     dependencies:
       yallist: 4.0.0
     dev: true
+
+  /lxgw-wenkai-webfont@1.7.0:
+    resolution: {integrity: sha512-kVJmT4xMAyOLhG6q0w63wJkVU7RP8UMQRGoAWj9tnpzL7sWFFYiEHBdUQyW9myqBQFa5SQfWfa2VLYF4IJBL5g==}
+    dev: false
 
   /magic-string@0.30.9:
     resolution: {integrity: sha512-S1+hd+dIrC8EZqKyT9DstTH/0Z+f76kmmvZnkfQVmOpDEF9iVgdYif3Q/pIWHmCoo59bQVGW0kVL3e2nl+9+Sw==}

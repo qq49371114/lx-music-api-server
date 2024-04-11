@@ -3,15 +3,17 @@ import { hopeTheme } from "vuepress-theme-hope";
 import sidebar from "./sidebar.js";
 
 export default hopeTheme({
-  hostname: "https://vuepress-theme-hope-docs-demo.netlify.app",
+  hostname: "https://helloplhm-qwq.github.io/lx-music-api-server",
 
   iconAssets: "fontawesome-with-brands",
 
   logo: "https://img2.imgtp.com/2024/04/08/AaDnm8dY.png",
 
-  repo: "vuepress-theme-hope/vuepress-theme-hope",
+  repo: "helloplhm-qwq/lx-music-api-server",
 
   docsDir: "src",
+
+  docsBranch: "docs",
 
   // 导航栏
   // navbar,
@@ -20,7 +22,6 @@ export default hopeTheme({
   sidebar,
 
   // 页脚
-  footer: "Copyright © 2024 All Devloper",
   displayFooter: true,
 
   // 加密配置
@@ -45,8 +46,8 @@ export default hopeTheme({
       provider: "Giscus",
       repo: "helloplhm-qwq/lx-music-api-server",
       repoId: "R_kgDOKr11fg",
-      category: "Announcements",
-      categoryId: "DIC_kwDOG_Pt2M4COD69",
+      category: "General",
+      categoryId: "DIC_kwDOKr11fs4CemjW",
     },
 
     components: {
@@ -65,6 +66,7 @@ export default hopeTheme({
       imgSize: true,
       include: true,
       mark: true,
+      alert: true,
       stylize: [
         {
           matcher: "Recommended",

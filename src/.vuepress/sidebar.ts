@@ -14,7 +14,12 @@ export default sidebar({
       text: "部署",
       icon: "book",
       prefix: "deploy/",
-      children: "structure",
+      collapsible: true,
+      link: "deploy/readme.md",
+      children: [
+        "deploy-windows.md",
+        "deploy-linuxordarwin.md",
+      ],
     },
     {
       text: "API调用方法",
