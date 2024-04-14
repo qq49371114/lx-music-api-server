@@ -4,7 +4,7 @@ head:
     - name: keywords
       content: Windows部署教程
 title: Windows部署教程
-icon: fab fa-dochub
+icon: fas fa-file-alt
 author: ikun0014
 date: 2024-04-10
 index: false
