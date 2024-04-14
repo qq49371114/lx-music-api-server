@@ -23,9 +23,9 @@ sudo apt install ffmpeg
 ```
 3.克隆仓库
 ``` bash
-git clone https://github.com/helloplhm-qwq/lx-music-api-server -b main
+git clone https://github.com/MeoProject/lx-music-api-server -b main
 
-git clone https://github.moeyy.xyz/github.com/helloplhm-qwq/lx-music-api-server -b main
+git clone https://github.moeyy.xyz/github.com/MeoProject/lx-music-api-server -b main
 ```
 根据网络环境选择
 

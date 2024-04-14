@@ -9,7 +9,7 @@ export default hopeTheme({
 
   logo: "https://img2.imgtp.com/2024/04/08/AaDnm8dY.png",
 
-  repo: "helloplhm-qwq/lx-music-api-server",
+  repo: "MeoProject/lx-music-api-server",
 
   docsDir: "src",
 
@@ -44,7 +44,7 @@ export default hopeTheme({
     // 注意: 仅用于测试! 你必须自行生成并在生产环境中使用自己的评论服务
     comment: {
       provider: "Giscus",
-      repo: "helloplhm-qwq/lx-music-api-server",
+      repo: "MeoProject/lx-music-api-server",
       repoId: "R_kgDOKr11fg",
       category: "General",
       categoryId: "DIC_kwDOKr11fs4CemjW",

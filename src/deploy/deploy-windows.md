@@ -25,7 +25,7 @@ index: false
 
 3.使用Git克隆仓库
 ``` bash
-git clone https://github.com/helloplhm-qwq/lx-music-api-server -b main
+git clone https://github.com/MeoProject/lx-music-api-server -b main
 ```
 
 4.使用pip或poetry进行依赖项安装

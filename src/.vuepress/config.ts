@@ -6,7 +6,7 @@ export default defineUserConfig({
 
   lang: "zh-CN",
   title: "LX Music Api Server",
-  description: "LX Music Api Server的文档",
+  description: "适用于 LX Music 的解析接口服务器的 Python 实现",
 
   theme,
 
