@@ -7,12 +7,12 @@
 # ----------------------------------------
 # This file is part of the "lx-music-api-server" project.
 
-import random
 from common import Httpx
 from common import config
 from common import variable
 from common.exceptions import FailedException
 from . import refresh_login # 删了这个定时任务会寄掉
+import secrets
 
 tools = {
     'qualityMap': {
@@ -36,7 +36,7 @@ async def url(songmid, quality):
     infobody = info_request.json()
     if infobody["code"] != "000000":
         raise FailedException("failed to fetch song info")
-    user_info = config.read_config('module.mg.user') if (not variable.use_cookie_pool) else random.choice(config.read_config('module.cookiepool.mg'))
+    user_info = config.read_config('module.mg.user') if (not variable.use_cookie_pool) else secrets.choice(config.read_config('module.cookiepool.mg'))
     req = await Httpx.AsyncRequest(f'https://m.music.migu.cn/migumusic/h5/play/auth/getSongPlayInfo?type={tools["qualityMap"][quality]}&copyrightId={infobody["resource"][0]["copyrightId"]}', {
         'method': 'GET',
         'headers': {
