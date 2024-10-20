@@ -6,6 +6,7 @@ on:
     paths-ignore:
       - '**.md'
       - '.gitignore'
+      workflow_dispatch: #手动调试按钮
 
 permissions:
   contents: write
