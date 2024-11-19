@@ -9,7 +9,6 @@
 
 import aiohttp
 import requests
-import random
 import traceback
 import zlib
 import ujson as json
@@ -20,6 +19,7 @@ from . import log
 from . import config
 from . import utils
 from . import variable
+import secrets
 
 def is_valid_utf8(text) -> bool:
     try:
@@ -118,10 +118,10 @@ def request(url: str, options = {}) -> requests.Response:
         useragent = d_lower['user-agent']
     except:
         try:
-            options['headers']['User-Agent'] = random.choice(ua_list)
+            options['headers']['User-Agent'] = secrets.choice(ua_list)
         except:
             options['headers'] = {}
-            options['headers']['User-Agent'] = random.choice(ua_list)
+            options['headers']['User-Agent'] = secrets.choice(ua_list)
     # 检查是否在国内
     if ((not variable.iscn) and (not options["headers"].get("X-Forwarded-For"))):
         options["headers"]["X-Forwarded-For"] = variable.fakeip
@@ -261,10 +261,10 @@ async def AsyncRequest(url, options = {}) -> ClientResponse:
         useragent = d_lower['user-agent']
     except:
         try:
-            options['headers']['User-Agent'] = random.choice(ua_list)
+            options['headers']['User-Agent'] = secrets.choice(ua_list)
         except:
             options['headers'] = {}
-            options['headers']['User-Agent'] = random.choice(ua_list)
+            options['headers']['User-Agent'] = secrets.choice(ua_list)
     # 检查是否在国内
     if ((not variable.iscn) and (not options["headers"].get("X-Forwarded-For"))):
         options["headers"]["X-Forwarded-For"] = variable.fakeip

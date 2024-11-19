@@ -10,9 +10,9 @@
 from common.exceptions import FailedException
 from .utils import buildRequestParams, sign
 from common import Httpx, config, utils, variable, scheduler, log
-import random
 import binascii
 import time
+import secrets
 
 logger = log.log('kugou_lite_sign_in')
 
@@ -32,7 +32,7 @@ async def randomMixSongMid():
         raise FailedException('排行榜获取失败')
 
     # 随机选择一首歌曲
-    randomSong = random.choice(data['data']['info'])
+    randomSong = secrets.choice(data['data']['info'])
 
     # 因为排行榜api不会返回mixsongmid
     # 所以需要进行一次搜索接口来获取
@@ -91,7 +91,7 @@ async def do_account_signin(user_info):
         "clientver": config.read_config('module.kg.client.clientver'),
         "clienttime": int(time.time()),
         "mid": user_info['mid'],
-        "uuid": str(binascii.hexlify(random.randbytes(16)), encoding="utf-8"),
+        "uuid": str(binascii.hexlify(secrets.SystemRandom().randbytes(16)), encoding="utf-8"),
         "dfid": "-"
     }
 

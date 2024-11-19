@@ -6,12 +6,12 @@
 # - license: MIT - 
 # ----------------------------------------
 # This file is part of the "lx-music-api-server" project.
-import random
 from common.exceptions import FailedException
 from common import config, utils, variable
 from .utils import getKey, signRequest, tools
 from .musicInfo import getMusicInfo
 import time
+import secrets
 
 async def url(songId, quality):
     songId = songId.lower()
@@ -26,7 +26,7 @@ async def url(songId, quality):
     if (not albumaudioid):
         albumaudioid = ""
     thash = thash.lower()
-    user_info = config.read_config('module.kg.user') if (not variable.use_cookie_pool) else random.choice(config.read_config('module.cookiepool.kg'))
+    user_info = config.read_config('module.kg.user') if (not variable.use_cookie_pool) else secrets.choice(config.read_config('module.cookiepool.kg'))
     params = {
         'album_id': albumid,
         'userid': user_info['userid'],

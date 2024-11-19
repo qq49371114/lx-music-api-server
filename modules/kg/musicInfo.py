@@ -10,9 +10,9 @@
 from common.utils import createMD5
 from common import Httpx
 from .utils import tools, signRequest
-import random
 import ujson as json
 import time
+import secrets
 
 async def getMusicInfo(hash_, use_cache = True):
     tn = int(time.time())
@@ -68,7 +68,7 @@ async def getMusicSingerInfo(hash_, use_cache = True):
         "isCdn": 1,
         "publish_time": 1
     }
-    uuid = createMD5(str(random.randint(100000, 999999)) + '114514')
+    uuid = createMD5(str(secrets.SystemRandom().randint(100000, 999999)) + '114514')
     req = await signRequest(url, params, {
         'method': 'GET',
         'headers': {

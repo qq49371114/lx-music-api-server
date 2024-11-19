@@ -13,9 +13,9 @@ from common import config
 from common import log
 from common.exceptions import FailedException
 from time import time
-from random import randint
 from .encrypt import eapiEncrypt
 import ujson as json
+import secrets
 
 logger = log.log("wy_refresh_login")
 
@@ -63,7 +63,7 @@ async def refresh(cookie:str):
         "resolution": cookie.get("resolution", "1920x1080"),
         "__csrf": cookie.get("__csrf", ""),
         "channel": cookie.get("channel", ""),
-        "requestId": str(time() * 1000)[:13] + "_" + f"{randint(0, 9999):0>4}",
+        "requestId": str(time() * 1000)[:13] + "_" + f"{secrets.SystemRandom().randint(0, 9999):0>4}",
     }
     if cookie.get("MUSIC_U"):
         header["MUSIC_U"] = cookie.get("MUSIC_U")

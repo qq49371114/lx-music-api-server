@@ -7,13 +7,13 @@
 # ----------------------------------------
 # This file is part of the "lx-music-api-server" project.
 
-import random
 from common import Httpx, variable
 from common import config
 from common.exceptions import FailedException
 from .encrypt import eapiEncrypt
 import ujson as json
 from . import refresh_login
+import secrets
 
 tools = {
     'qualityMap': {
@@ -58,7 +58,7 @@ async def url(songId, quality):
     req = await Httpx.AsyncRequest(requestUrl, {
         'method': 'POST',
         'headers': {
-            'Cookie': config.read_config('module.wy.user.cookie') if (not variable.use_cookie_pool) else random.choice(config.read_config('module.cookiepool.wy'))['cookie'],
+            'Cookie': config.read_config('module.wy.user.cookie') if (not variable.use_cookie_pool) else secrets.choice(config.read_config('module.cookiepool.wy'))['cookie'],
         },
         'form': eapiEncrypt(path, json.dumps(requestBody))
     })

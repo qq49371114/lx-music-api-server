@@ -12,7 +12,7 @@ from common import config, utils, variable, Httpx
 from .musicInfo import getMusicInfo
 from .utils import tools
 from .utils import signRequest
-import random
+import secrets
 
 createObject = utils.CreateObject
 
@@ -44,7 +44,7 @@ async def url(songId, quality):
     strMediaMid = infoBody['track_info']['file']['media_mid']
     if (config.read_config("module.tx.vkey_api.use_vkey_api")):
         return await vkeyUrl(songId, quality, infoBody)
-    user_info = config.read_config('module.tx.user') if (not variable.use_cookie_pool) else random.choice(config.read_config('module.cookiepool.tx'))
+    user_info = config.read_config('module.tx.user') if (not variable.use_cookie_pool) else secrets.choice(config.read_config('module.cookiepool.tx'))
     requestBody = {
         'req_0': {
             'module': 'vkey.GetVkeyServer',
