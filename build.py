@@ -3,6 +3,7 @@ import toml
 import sys
 import re
 import os
+from security import safe_command
 
 
 def get_latest_tag():
@@ -100,7 +101,7 @@ def build_test(fileName):
 
     sha = get_latest_commit_sha()
 
-    popen = subprocess.Popen([get_python_path(),
+    popen = safe_command.run(subprocess.Popen, [get_python_path(),
                               '-m',
                               'PyInstaller',
                               '-F',
@@ -135,7 +136,7 @@ def build_release(fileName = ''):
 
     vername = toml.load("./pyproject.toml")["tool"]["poetry"]["version"]
 
-    popen = subprocess.Popen([get_python_path(),
+    popen = safe_command.run(subprocess.Popen, [get_python_path(),
                               '-m',
                               'PyInstaller',
                               '-F',
